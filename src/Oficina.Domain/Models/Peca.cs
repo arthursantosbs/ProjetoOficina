@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace Oficina.Domain.Models
 {
-    public class Pecas : Entity
+    public class Peca : Entity
     {
+        public string? Codigo { get; set; }
         public string? Nome { get; set; }   
         public decimal Valor { get; set; }     
         

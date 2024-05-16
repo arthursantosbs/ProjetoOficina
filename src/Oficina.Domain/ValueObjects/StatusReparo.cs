@@ -2,8 +2,8 @@ namespace Oficina.Domain.ValueObjects
 {
     public enum StatusReparo
     {
-        AguardandoAutorizacao,
-        EmReparo,
-        Finalizado
+        AguardandoAutorizacao = 1,
+        EmReparo = 2,
+        Finalizado = 3
     }
 }

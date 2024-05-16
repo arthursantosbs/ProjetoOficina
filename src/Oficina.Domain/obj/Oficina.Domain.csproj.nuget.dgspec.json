@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\projetooficina\\src\\Oficina.Domain\\Oficina.Domain.csproj": {}
+    "F:\\workspace\\DotNet\\ProjetoOficina\\src\\Oficina.Domain\\Oficina.Domain.csproj": {}
   },
   "projects": {
-    "F:\\projetooficina\\src\\Oficina.Domain\\Oficina.Domain.csproj": {
+    "F:\\workspace\\DotNet\\ProjetoOficina\\src\\Oficina.Domain\\Oficina.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\projetooficina\\src\\Oficina.Domain\\Oficina.Domain.csproj",
+        "projectUniqueName": "F:\\workspace\\DotNet\\ProjetoOficina\\src\\Oficina.Domain\\Oficina.Domain.csproj",
         "projectName": "Oficina.Domain",
-        "projectPath": "F:\\projetooficina\\src\\Oficina.Domain\\Oficina.Domain.csproj",
+        "projectPath": "F:\\workspace\\DotNet\\ProjetoOficina\\src\\Oficina.Domain\\Oficina.Domain.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "F:\\projetooficina\\src\\Oficina.Domain\\obj\\",
+        "outputPath": "F:\\workspace\\DotNet\\ProjetoOficina\\src\\Oficina.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -38,6 +38,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -59,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

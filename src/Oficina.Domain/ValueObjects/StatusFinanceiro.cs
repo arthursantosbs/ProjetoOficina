@@ -2,7 +2,7 @@ namespace Oficina.Domain.ValueObjects
 {
     public enum StatusFinanceiro
     {
-        AguardandoPagamento,
-        Pago
+        AguardandoPagamento = 1,
+        Pago = 2
     }
 }

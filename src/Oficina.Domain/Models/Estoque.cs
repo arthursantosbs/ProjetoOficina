@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Oficina.Domain.Models
 {
-    public class Estoque : Entity
+    public class Estoque 
     {
-        public List<Pecas>? Pecas { get; set; }
+        public List<Peca>? Pecas { get; set; }
 
     }
 }

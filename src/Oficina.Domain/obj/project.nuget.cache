@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9kDXfoiXiJKu5Bnl7optt0ypbPYkC1995gVA8WuBmKuOWX45HyBLJtAv+3CCE9jiHxhlXg7Fpk81vBnegXV0PQ==",
+  "dgSpecHash": "77POj2JH8ujVzttvRZjrr2cZx02bwdvoCRdCcAt3t2mSvfkE5WdIAIS6HRZp0bRGAErUFmTzL6f4Owoooz7e1g==",
   "success": true,
-  "projectFilePath": "F:\\projetooficina\\src\\Oficina.Domain\\Oficina.Domain.csproj",
+  "projectFilePath": "F:\\workspace\\DotNet\\ProjetoOficina\\src\\Oficina.Domain\\Oficina.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

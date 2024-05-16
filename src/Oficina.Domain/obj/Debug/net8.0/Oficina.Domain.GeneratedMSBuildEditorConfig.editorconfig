@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Oficina.Domain
-build_property.ProjectDir = F:\projetooficina\src\Oficina.Domain\
+build_property.ProjectDir = F:\workspace\DotNet\ProjetoOficina\src\Oficina.Domain\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

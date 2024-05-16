@@ -7,12 +7,12 @@ namespace Oficina.Domain.Models
 {
     public abstract class Entity
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
-        public Entity()
-        {
-            Id = Guid.NewGuid();
-        }
+        //public Entity()
+        //{
+        //    Id = Guid.NewGuid();
+        //}
 
         public override bool Equals(object? obj)
         {

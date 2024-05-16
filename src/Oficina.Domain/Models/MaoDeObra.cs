@@ -7,6 +7,7 @@ namespace Oficina.Domain.Models
 {
     public class MaoDeObra : Entity
     {
+        public string? Codigo { get; set; }
         public string? TipoServico { get; set; }
         public decimal Valor { get; set; }        
         

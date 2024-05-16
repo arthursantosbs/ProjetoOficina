@@ -10,8 +10,9 @@ namespace Oficina.Domain.Models
         public string? Cor { get; set; }
         public string? Categoria { get; set; }
         
-        public Cliente? Cliente { get; set; }
-        public Guid ClienteId { get; set; }
+        /* EF Core */
+        public Cliente? Cliente { get; set; } // Propriedade de Navegação
+        public Guid ClienteId { get; set; } // FK
         
     }
 }
