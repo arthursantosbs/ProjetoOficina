@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Oficina.Domain.Models;
 
 namespace Oficina.Infrastructure.EntitiesConfiguration;
 
-public class EnderecoConfiguration
+public class EnderecoConfiguration : IEntityTypeConfiguration<Endereco>
 {
+    public void Configure(EntityTypeBuilder<Endereco> builder)
+    {
+        throw new NotImplementedException();
+    }
 }
