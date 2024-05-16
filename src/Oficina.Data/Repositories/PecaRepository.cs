@@ -1,38 +1,52 @@
-﻿using Oficina.Domain.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Oficina.Domain.Interfaces;
 using Oficina.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Oficina.Infrastructure.Context;
 
 namespace Oficina.Infrastructure.Repositories
 {
-    public class PecaRepository : IPecaRepository
+    public class PecaRepository : IPecaRepository, IDisposable
     {
-        public Task<Peca> CreateAsync(Peca entity)
+        private readonly ApplicationContext _context;
+        public PecaRepository(ApplicationContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public async Task<Peca> CreateAsync(Peca entity)
+        {
+            await _context.AddAsync(entity);
+            await _context.SaveChangesAsync();
+            return entity;
         }
 
-        public Task DeleteAsync(Peca entity)
+        public async Task DeleteAsync(Peca entity)
         {
-            throw new NotImplementedException();
+            _context.Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<IEnumerable<Peca>> GetAllAsync()
+        public void Dispose()
         {
-            throw new NotImplementedException();
+            _context?.Dispose();
         }
 
-        public Task<Peca> GetById(int id)
+        public async Task<IEnumerable<Peca>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var pecas = await _context.Pecas.ToListAsync();
+            return pecas;
         }
 
-        public Task<Peca> UpdateAsync(Peca entity)
+        public async Task<Peca> GetById(int id)
         {
-            throw new NotImplementedException();
+            var peca = await _context.Pecas.FirstOrDefaultAsync(p => p.Id == id);
+            return peca;
+        }
+
+        public async Task<Peca> UpdateAsync(Peca entity)
+        {
+            _context.Update(entity);
+            return entity;
+               
         }
     }
 }

@@ -1,43 +1,52 @@
-﻿using Oficina.Domain.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Oficina.Domain.Interfaces;
 using Oficina.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Oficina.Infrastructure.Context;
 
 namespace Oficina.Infrastructure.Repositories
 {
     public class ServicoRepository : IServicoRepository, IDisposable
     {
-        public Task<Servico> CreateAsync(Servico entity)
+        private readonly ApplicationContext _context;
+        public ServicoRepository(ApplicationContext context) 
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public async Task<Servico> CreateAsync(Servico entity)
+        {
+            await _context.AddAsync(entity);
+            await _context.SaveChangesAsync();
+            return entity;
         }
 
-        public Task DeleteAsync(Servico entity)
+        public async Task DeleteAsync(Servico entity)
         {
-            throw new NotImplementedException();
+            _context.Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _context?.Dispose();
         }
 
-        public Task<IEnumerable<Servico>> GetAllAsync()
+        public async Task<IEnumerable<Servico>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var servicos = await _context.Servicos.ToListAsync();
+            return servicos;
         }
 
-        public Task<Servico> GetById(int id)
+        public async Task<Servico> GetById(int id)
         {
-            throw new NotImplementedException();
+            var servico = await _context.Servicos.FirstOrDefaultAsync(s => s.Id  == id);
+            return servico;
         }
 
-        public Task<Servico> UpdateAsync(Servico entity)
+        public async Task<Servico> UpdateAsync(Servico entity)
         {
-            throw new NotImplementedException();
+            _context.Update(entity);
+            await _context.SaveChangesAsync();
+            return entity;
         }
     }
 }

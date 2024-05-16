@@ -1,38 +1,52 @@
-﻿using Oficina.Domain.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Oficina.Domain.Interfaces;
 using Oficina.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Oficina.Infrastructure.Context;
 
 namespace Oficina.Infrastructure.Repositories
 {
-    public class OrcamentoRepositrory : IOrcamentoRepository
+    public class OrcamentoRepositrory : IOrcamentoRepository, IDisposable
     {
-        public Task<Orcamento> CreateAsync(Orcamento entity)
+        private readonly ApplicationContext _context;
+        public OrcamentoRepositrory(ApplicationContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public async Task<Orcamento> CreateAsync(Orcamento entity)
+        {
+            _context.Add(entity);
+            await _context.SaveChangesAsync();
+            return entity;
         }
 
-        public Task DeleteAsync(Orcamento entity)
+        public async Task DeleteAsync(Orcamento entity)
         {
-            throw new NotImplementedException();
+            _context.Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<IEnumerable<Orcamento>> GetAllAsync()
+        public void Dispose()
         {
-            throw new NotImplementedException();
+            _context?.Dispose();
         }
 
-        public Task<Orcamento> GetById(int id)
+        public async Task<IEnumerable<Orcamento>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var orcamentos = await _context.Orcamentos.ToListAsync();
+            return orcamentos;
         }
 
-        public Task<Orcamento> UpdateAsync(Orcamento entity)
+        public async Task<Orcamento> GetById(int id)
         {
-            throw new NotImplementedException();
+            var orcamento = await _context.Orcamentos.FirstOrDefaultAsync(o => o.Id == id);
+            return orcamento;
+        }
+
+        public async Task<Orcamento> UpdateAsync(Orcamento entity)
+        {
+            _context.Update(entity);
+            await _context.SaveChangesAsync();
+            return entity;
         }
     }
 }
