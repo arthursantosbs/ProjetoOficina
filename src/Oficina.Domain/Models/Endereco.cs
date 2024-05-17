@@ -17,7 +17,9 @@ namespace Oficina.Domain.Models
 
         /* EF Core */
         public int ClienteId { get; set; } // FK
+        public int FuncionarioId { get; set; } // FK
         public Cliente? Cliente { get; set; } // Propriedade de Navegação
+        public Funcionario? Funcionario { get; set; }
 
     }
 }

@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 
 namespace Oficina.Domain.Models
 {
-    public class Estoque 
+    public class Estoque : Entity
     {
-        public List<Peca>? Pecas { get; set; }
+        public IEnumerable<Peca>? Pecas { get; set; }
+        public IEnumerable<MaoDeObra>? MaoDeObras { get; set; }
 
+        public DateTime DataCadastro { get; set; }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Oficina.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac30a849c2678fe088bc241441f1e24f4c461944")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64974c1d95403bd6f60949ab6549f119c6967ba7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Oficina.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Oficina.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

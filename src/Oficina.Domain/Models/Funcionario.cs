@@ -7,7 +7,9 @@ namespace Oficina.Domain.Models
         public string? Telefone { get; set; }
         public string? Email { get; set; }        
         public Endereco? Endereco { get; set; } 
-        public string? Cargo { get; set; }        
+        public string? Cargo { get; set; }      
+        
+        public int EnderecoId { get; set; }
                
     }
 }

@@ -13,6 +13,14 @@ public class MaoDeObraConfiguration : IEntityTypeConfiguration<MaoDeObra>
 {
     public void Configure(EntityTypeBuilder<MaoDeObra> builder)
     {
-        throw new NotImplementedException();
+        builder.ToTable("MaoDeObras");
+        builder.HasKey(x => x.Id);
+
+        builder.Property(m => m.Codigo).HasColumnType("int");
+        builder.Property(m => m.TipoServico).HasMaxLength(200);
+        builder.Property(m => m.Valor).HasPrecision(10, 2).IsRequired();
+
+        builder.HasOne(m => m.Servico).WithMany(s => s.MaoDeObra).HasForeignKey(m => m.ServicoId);
+
     }
 }

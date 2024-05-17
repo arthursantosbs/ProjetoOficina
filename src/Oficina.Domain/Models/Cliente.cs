@@ -1,22 +1,22 @@
 using Oficina.Domain.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Oficina.Domain.Models
 {
     public sealed class Cliente : Entity
     {
-        public Nome Nome { get; private set; }
-        public Telefone Telefone { get; private set; }
+        public string Nome { get; private set; }
+        public string Telefone { get; private set; }
         public string? Email { get; private set; }        
         public Endereco? Endereco { get; private set; }
+        public IEnumerable<Veiculo> Veiculos { get; private set; }
 
-        public Cliente(Nome nome, Telefone telefone, string email, Endereco endereco)
+        public int EnderecoId { get; set; }
+        public int VeiculoId {  get; set; }
+
+        public Cliente() 
         {
-            Nome = nome;
-            Telefone = telefone;
-        }
+            Veiculos = new List<Veiculo>();
+        }    
+
     }
 }
